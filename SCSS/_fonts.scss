@@ -1,0 +1,89 @@
+@mixin fontArial($size: false, $lh: false, $fw: false, $ls: false) {
+  font-family: Arial, sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+}
+
+@mixin fontTrebuchet(
+  $size: false,
+  $lh: false,
+  $fw: false,
+  $ls: false
+) {
+  font-family: 'Trebuchet MS', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+}
+
+@mixin fontMerriweather(
+  $size: false,
+  $lh: false,
+  $fw: false,
+  $ls: false
+) {
+  font-family: 'Merriweather Sans', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+}
+
+@mixin fontRoboto($size: false, $lh: false, $fw: false, $ls: false) {
+  font-family: 'Roboto Condensed', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+}
+
+@mixin fontCousine($size: false, $lh: false, $fw: false, $ls: false) {
+  font-family: 'Cousine', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $fw {
+    font-weight: $fw;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+}

@@ -1,3 +1,6 @@
+@import 'SCSS/fonts';
+@import 'SCSS/colors';
+
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +15,7 @@ header {
 .header-top {
   width: 100vw;
   height: 27px;
-  background-color: #f6f6f6;
+  background-color: $colorBackground-LightGrayOne;
   display: flex;
   justify-content: center;
   .container {
@@ -25,15 +28,12 @@ header {
       justify-content: space-between;
       align-items: center;
       a {
-        font-family: 'Merriweather Sans';
-        font-size: 11px;
-        line-height: 19px;
-        font-weight: 400;
+        @include fontMerriweather(11px, 19px, 400);
         text-transform: uppercase;
-        color: #7e7e7e;
+        color: $colorFonts-MidleGrayOne;
         text-decoration: none;
         &:hover {
-          color: #444444;
+          color: $colorFonts-Gray;
         }
       }
     }
@@ -44,12 +44,9 @@ header {
       justify-content: space-between;
       align-items: center;
       select {
-        font-family: 'Merriweather Sans';
-        font-size: 11px;
-        line-height: 19px;
-        font-weight: 400;
+        @include fontMerriweather(11px, 19px, 400);
         text-transform: uppercase;
-        color: #7e7e7e;
+        color: $colorFonts-MidleGrayOne;
         background: none;
         border: none;
       }
@@ -57,12 +54,13 @@ header {
   }
 }
 .my-bag-content {
+  background-color: $colorBackground-White;
   display: none;
   flex-direction: column;
   padding: 20px;
   width: 300px;
   height: 399px;
-  border: 1px solid #bbbbbb;
+  border: 1px solid $colorBorder-Gray;
   position: absolute;
   top: 27px;
   right: -20px;
@@ -71,22 +69,20 @@ header {
     display: block;
     width: 132px;
     height: 27px;
-    background-color: #ffffff;
+    background-color: $colorBackground-White;
     position: absolute;
     top: -28px;
     right: -1px;
-    border: 1px solid #bbbbbb;
+    border: 1px solid $colorBorder-Gray;
     border-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .my-bag-title {
-    font-family: Arial;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #7b7b7b;
+    @include fontArial(14px, 18px, 400);
+    text-transform: none;
+    color: $colorFonts-MidleGrayOne;
     padding-bottom: 17px;
   }
   .my-bag-card {
@@ -95,37 +91,26 @@ header {
     height: 104px;
     .bag-card-image {
       min-width: 80px;
-      background-color: #cccccc;
-      font-family: Arial;
-      font-size: 13px;
-      line-height: 22px;
-      font-weight: 700;
+      background-color: $colorBackground-Gray;
+      @include fontArial(13px, 22px, 700);
       text-transform: uppercase;
-      color: #ffffff;
+      color: $colorFonts-White;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 10px;
     }
     .bag-product-name {
-      font-family: 'Merriweather Sans';
-      font-size: 13px;
-      line-height: 17px;
-      font-weight: 400;
-      color: #444444;
+      @include fontMerriweather(13px, 17px, 400);
+      text-transform: none;
+      color: $colorFonts-Gray;
+      padding-bottom: 13px;
     }
     .bag-product-price {
-      font-family: Cousine;
-      font-size: 14px;
-      line-height: 17px;
-      font-weight: 700;
-      color: #222222;
+      @include fontCousine(14px, 17px, 700);
+      color: $colorFonts-BlackTwo;
       span {
-        font-family: Cousine;
-        font-size: 14px;
-        line-height: 17px;
-        font-weight: 700;
-        color: #999999;
+        color: $colorFonts-MidleGrayOne;
         text-decoration: line-through;
       }
     }
@@ -135,25 +120,19 @@ header {
     justify-content: space-between;
     padding-bottom: 11px;
     p {
-      font-family: Cousine;
-      font-size: 13px;
-      line-height: 18px;
-      font-weight: 700;
+      @include fontCousine(13px, 18px, 700);
       text-transform: uppercase;
-      color: #666666;
+      color: $colorFonts-MidleGrayTwo;
       span {
-        font-family: Cousine;
-        font-size: 15px;
-        line-height: 18px;
-        font-weight: 700;
-        color: #222222;
+        @include fontCousine(15px, 18px, 700);
+        color: $colorFonts-BlackTwo;
       }
     }
   }
   .my-bag-content-links {
     height: 30px;
-    background-color: #fafafa;
-    border: 2px solid #444444;
+    background-color: $colorBackground-LightGrayOne;
+    border: 2px solid $colorFonts-Gray;
     display: flex;
     align-items: center;
     a {
@@ -162,35 +141,30 @@ header {
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      font-family: 'Merriweather Sans';
-      font-size: 13px;
-      line-height: 0px;
-      font-weight: 700;
+      @include fontMerriweather(13px, 0, 700);
       text-transform: uppercase;
-      color: #444444;
+      color: $colorFonts-Gray;
       &:hover {
-        color: #cf4647;
+        color: $colorFonts-Red;
       }
     }
     .line {
       width: 2px;
       height: 16px;
-      background-color: #444444;
+      background-color: $colorFonts-Gray;
     }
   }
 }
 .my-bag {
-  font-family: 'Merriweather Sans';
-  font-size: 11px;
-  line-height: 19px;
-  font-weight: 400;
+  @include fontMerriweather(11px, 19px, 400);
   text-transform: uppercase;
-  color: #7e7e7e;
+  color: $colorFonts-MidleGrayOne;
   &:hover {
     cursor: pointer;
   }
   &:hover .my-bag-content {
     display: flex;
+    z-index: 12;
   }
 }
 .material-symbols-outlined {
@@ -203,10 +177,10 @@ header {
   position: relative;
   width: 100vw;
   height: 103px;
-  background-color: #ffffff;
+  background-color: $colorBackground-White;
   display: flex;
   justify-content: center;
-  padding-block: 19px 16px;
+  padding-top: 19px;
   .container {
     width: 1170px;
     display: flex;
@@ -217,16 +191,14 @@ header {
 .header-logo {
   display: flex;
   align-items: end;
+  padding-bottom: 16px;
   img {
     width: 47px;
     height: 33px;
   }
   h1 {
-    font-family: 'Merriweather Sans';
-    font-size: 44px;
-    line-height: 32px;
-    font-weight: 700;
-    color: #454545;
+    @include fontMerriweather(45px, 32px, 700);
+    color: $colorFonts-BlackOne;
     padding-left: 12px;
   }
 }
@@ -239,21 +211,27 @@ header {
 }
 
 .header-menu {
+  width: 100%;
+  height: 100%;
   .header-menu-list {
     display: flex;
     justify-content: space-between;
+    height: 100%;
     li {
       list-style: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
       a {
-        font-family: Cousine;
-        font-size: 14px;
-        line-height: 19px;
-        font-weight: 700;
+        @include fontCousine(14px, 19px, 700);
         text-transform: uppercase;
-        color: #565656;
+        color: $colorFonts-Gray;
         text-decoration: none;
       }
     }
+  }
+  .fashion:hover .fashion-box {
+    display: grid;
   }
 }
 
@@ -265,11 +243,11 @@ header {
     display: flex;
     width: 260px;
     height: 32px;
-    background-color: #ffffff;
-    border: 1px solid #e1e1e1;
+    background-color: $colorBackground-White;
+    border: 1px solid $colorBackground-ightGrayTwo;
     &:active .search-button {
-      background-color: #e1e1e1;
-      border: 1px solid #e1e1e1;
+      background-color: $colorBackground-ightGrayTwo;
+      border: 1px solid $colorBackground-ightGrayTwo;
     }
     .search-field {
       width: 100%;
@@ -277,11 +255,8 @@ header {
       border: none;
       outline: none;
       &::placeholder {
-        font-family: 'Trebuchet MS';
-        font-size: 13px;
-        line-height: 19px;
-        font-weight: 400;
-        color: #888888;
+        @include fontTrebuchet(13px, 19px, 400);
+        color: $colorFonts-MidleGrayOne;
       }
     }
     .search-button {
@@ -302,24 +277,25 @@ header {
 }
 .slide-page {
   height: 1070px;
-  background-color: #cccccc;
+  background-color: $colorBackground-Gray;
 }
 
 .fashion-box {
   position: absolute;
   top: 103px;
+  left: 290px;
   width: 1170px;
   height: 483px;
-  background-color: #ffffff;
-  border: 1px solid #bbbbbb;
+  background-color: $colorBackground-White;
+  border: 1px solid $colorBorder-Gray;
   padding: 40px 15px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: 1fr 130px;
   row-gap: 60px;
   column-gap: 42px;
   .block-image {
-    background-color: #cccccc;
+    background-color: $colorBackground-Gray;
   }
   .clothing {
     grid-area: 1 / 1 / 2 / 4;
@@ -341,26 +317,20 @@ header {
     align-items: center;
     justify-content: flex-end;
     h1 {
-      font-family: 'Merriweather Sans';
-      font-size: 25px;
-      line-height: 25px;
-      font-weight: 800;
+      @include fontMerriweather(25px, 25px, 800, 0.025em);
       text-transform: uppercase;
-      color: #ffffff;
+      color: $colorFonts-White;
     }
     h2 {
-      font-family: 'Roboto Condensed';
-      font-size: 20px;
-      font-weight: 700;
-      color: #ffffff;
+      @include fontRoboto(20px, 17px, 700);
+      text-transform: uppercase;
+      padding-top: 10px;
+      color: $colorFonts-White;
     }
     p {
-      font-family: Arial;
-      font-size: 13px;
-      line-height: 25px;
-      font-weight: 700;
+      @include fontArial(13px, 25px, 700);
       text-transform: uppercase;
-      color: #ffffff;
+      color: $colorFonts-White;
       padding-top: 35px;
     }
   }
@@ -373,6 +343,9 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
+      @include fontArial(15px, 32px, 400);
+      text-transform: uppercase;
+      color: $colorFonts-White;
     }
     .new-arrivals-description {
       width: 50%;
@@ -381,12 +354,9 @@ header {
       align-items: end;
       justify-content: center;
       h2 {
-        font-family: 'Roboto Condensed';
-        font-size: 20px;
-        line-height: 32px;
-        font-weight: 700;
+        @include fontRoboto(20px, 32px, 700);
         text-transform: uppercase;
-        color: #1b1b1b;
+        color: $colorFonts-BlackTwo;
       }
       .for {
         display: flex;
@@ -397,22 +367,16 @@ header {
           border: 2px solid #000000;
         }
         p {
-          font-family: 'Merriweather Sans';
-          font-size: 15px;
-          line-height: 32px;
-          font-weight: 700;
+          @include fontMerriweather(15px, 32px, 700);
           font-style: italic;
-          color: #1b1b1b;
+          color: $colorFonts-BlackTwo;
           padding-inline: 10px;
         }
       }
       h1 {
-        font-family: 'Merriweather Sans';
-        font-size: 34px;
-        line-height: 32px;
-        font-weight: 800;
+        @include fontMerriweather(34px, 32px, 800);
         text-transform: uppercase;
-        color: #1b1b1b;
+        color: $colorFonts-BlackTwo;
       }
     }
   }
@@ -422,12 +386,9 @@ header {
     align-items: center;
     justify-content: center;
     h1 {
-      font-family: 'Roboto Condensed';
-      font-size: 35px;
-      line-height: 32px;
-      font-weight: 700;
+      @include fontRoboto(35px, 32px, 700);
       text-transform: uppercase;
-      color: #ffffff;
+      color: $colorFonts-White;
     }
   }
   .bags-under {
@@ -440,50 +401,38 @@ header {
       align-items: center;
       justify-content: center;
       h1 {
-        font-family: 'Merriweather Sans';
-        font-size: 36px;
-        line-height: 32px;
-        font-weight: 800;
+        @include fontMerriweather(36px, 32px, 800);
         text-transform: uppercase;
-        color: #ffffff;
+        color: $colorFonts-White;
       }
       h2 {
-        font-family: 'Roboto Condensed';
-        font-size: 29px;
-        line-height: 32px;
-        font-weight: 700;
+        @include fontRoboto(29px, 32px, 700);
         text-transform: uppercase;
-        color: #ffffff;
+        color: $colorFonts-White;
       }
     }
   }
   &__nav {
     h3 {
       display: flex;
-      font-family: Cousine;
-      font-size: 15px;
-      line-height: 19px;
-      font-weight: 700;
+      @include fontCousine(15px, 19px, 700);
       text-transform: uppercase;
-      color: #666666;
+      color: $colorFonts-MidleGrayTwo;
       padding-bottom: 12px;
       span {
         width: 100%;
-        border-bottom: 1px solid #e4e4e4;
+        border-bottom: 1px solid $colorBackground-ightGrayTwo;
       }
     }
     .fashion-box__nav-list {
       list-style: none;
       li {
         a {
-          font-family: Arial;
-          font-size: 14px;
-          line-height: 30px;
-          font-weight: 400;
-          color: #555555;
+          @include fontArial(14px, 30px, 400);
+          color: $colorFonts-MidleGrayTwo;
           text-decoration: none;
           &:hover {
-            color: #cf4647;
+            color: $colorFonts-Red;
           }
         }
       }
