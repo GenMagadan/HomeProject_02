@@ -6,50 +6,64 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: cadetblue;
+}
 header {
   display: flex;
   flex-direction: column;
 }
 
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+  align-items: center;
+}
+
 .header-top {
-  width: 100vw;
+  width: 100%;
   height: 27px;
   background-color: $colorBackground-LightGrayOne;
   display: flex;
-  justify-content: center;
-  .container {
-    width: 1170px;
+  justify-content: space-between;
+  align-items: center;
+  .header-top-left {
+    width: 40%;
     display: flex;
     justify-content: space-between;
-    .header-top-left {
-      width: 56%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      a {
-        @include fontMerriweather(11px, 19px, 400);
-        text-transform: uppercase;
-        color: $colorFonts-MidleGrayOne;
-        text-decoration: none;
-        &:hover {
-          color: $colorFonts-Gray;
-        }
+    align-items: center;
+    a {
+      @include fontMerriweather(11px, 19px, 400);
+      text-transform: uppercase;
+      color: $colorFonts-MidleGrayOne;
+      text-decoration: none;
+      white-space: nowrap;
+      &:hover {
+        color: $colorFonts-Gray;
       }
     }
-    .header-top-right {
-      position: relative;
-      width: 32%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      select {
-        @include fontMerriweather(11px, 19px, 400);
-        text-transform: uppercase;
-        color: $colorFonts-MidleGrayOne;
-        background: none;
-        border: none;
+    .login {
+      span {
+        padding-left: 10px;
       }
+    }
+  }
+  .header-top-right {
+    position: relative;
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    select {
+      @include fontMerriweather(11px, 19px, 400);
+      text-transform: uppercase;
+      color: $colorFonts-MidleGrayOne;
+      background: none;
+      border: none;
+      outline: none;
     }
   }
 }
@@ -62,7 +76,7 @@ header {
   height: 399px;
   border: 1px solid $colorBorder-Gray;
   position: absolute;
-  top: 27px;
+  top: 23px;
   right: -20px;
   &::before {
     content: 'My Bag: 2 item(s)';
@@ -159,6 +173,10 @@ header {
   @include fontMerriweather(11px, 19px, 400);
   text-transform: uppercase;
   color: $colorFonts-MidleGrayOne;
+  .my-bag-name {
+    white-space: nowrap;
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -175,23 +193,96 @@ header {
 
 .header-buttom {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 103px;
   background-color: $colorBackground-White;
-  display: flex;
-  justify-content: center;
-  padding-top: 19px;
-  .container {
-    width: 1170px;
+  .select-buttom {
+    display: none;
+    select {
+      @include fontMerriweather(11px, 19px, 400);
+      text-transform: uppercase;
+      color: $colorFonts-MidleGrayOne;
+      background: none;
+      border: none;
+      outline: none;
+    }
+  }
+  .register {
+    display: none;
+    place-content: center;
+    .login {
+      @include fontMerriweather(11px, 19px, 400);
+      text-transform: uppercase;
+      color: $colorFonts-MidleGrayOne;
+      text-decoration: none;
+      white-space: nowrap;
+      &:hover {
+        color: $colorFonts-Gray;
+      }
+      span {
+        padding-left: 10px;
+      }
+    }
+  }
+  .header-buttom-container {
+    position: relative;
+    max-width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: 215px auto;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.header-buttom_my-bag {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  .header-buttom-navigation {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    .catalog-button {
+      border: none;
+      background-color: transparent;
+      &:hover {
+        cursor: pointer;
+        .catalog-menu {
+          display: block;
+        }
+      }
+      &:active .catalog-menu {
+        display: block;
+      }
+    }
+    h3 {
+      @include fontCousine(16px, 19px, 700);
+      text-transform: uppercase;
+      color: #565656;
+      padding-top: 3px;
+    }
+  }
+  .header-buttom-basket {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    p {
+      @include fontCousine(16px, 19px, 400);
+      text-transform: uppercase;
+      color: #565656;
+      padding-top: 6px;
+    }
   }
 }
 
 .header-logo {
+  grid-area: 1 / 1 / 3 / 2;
   display: flex;
   align-items: end;
-  padding-bottom: 16px;
+  padding-bottom: 19px;
   img {
     width: 47px;
     height: 33px;
@@ -204,41 +295,11 @@ header {
 }
 
 .menu-search {
-  width: 67%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header-menu {
   width: 100%;
-  height: 100%;
-  .header-menu-list {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    li {
-      list-style: none;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      a {
-        @include fontCousine(14px, 19px, 700);
-        text-transform: uppercase;
-        color: $colorFonts-Gray;
-        text-decoration: none;
-      }
-    }
-  }
-  .fashion:hover .fashion-box {
-    display: grid;
-  }
-}
-
-.search-header {
-  width: 100%;
+  grid-area: 1 / 2 / 2 / 3;
   display: flex;
-  justify-content: flex-end;
+  align-items: end;
+  justify-content: end;
   form {
     display: flex;
     width: 260px;
@@ -265,26 +326,51 @@ header {
       background-color: transparent;
       border: none;
       outline: none;
+      display: grid;
+      place-content: center;
     }
     .search-button img {
       width: 16px;
       height: 16px;
-      object-fit: cover;
       filter: brightness(0) saturate(100%) invert(59%) sepia(15%)
         saturate(15%) hue-rotate(325deg) brightness(88%) contrast(90%);
     }
   }
 }
-.slide-page {
-  height: 1070px;
-  background-color: $colorBackground-Gray;
+
+.header-menu {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  justify-content: flex-end;
+  .header-menu-list {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    li {
+      list-style: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      a {
+        @include fontCousine(14px, 19px, 700);
+        text-transform: uppercase;
+        color: $colorFonts-Gray;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    }
+  }
+  .fashion:hover .fashion-box {
+    display: grid;
+  }
 }
 
 .fashion-box {
   position: absolute;
   top: 103px;
-  left: 290px;
-  width: 1170px;
+  left: 20px;
+  width: calc(100% - 40px);
   height: 483px;
   background-color: $colorBackground-White;
   border: 1px solid $colorBorder-Gray;
@@ -431,11 +517,365 @@ header {
           @include fontArial(14px, 30px, 400);
           color: $colorFonts-MidleGrayTwo;
           text-decoration: none;
+          text-transform: none;
           &:hover {
             color: $colorFonts-Red;
           }
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 980px) and (min-width: 760px) {
+  .header-top {
+    .header-top-left {
+      .login {
+        span {
+          display: none;
+        }
+      }
+    }
+    .header-top-right {
+      width: 40%;
+    }
+  }
+  .header-menu {
+    .header-menu-list {
+      width: 95%;
+    }
+  }
+  .fashion-box {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    row-gap: 44px;
+    li a span {
+      display: none;
+    }
+    .dresses {
+      display: none;
+    }
+    .new-arrivals {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    .shoes {
+      grid-area: 1 / 4 / 2 / 7;
+    }
+    .accessories {
+      grid-area: 1 / 7 / 2 / 10;
+    }
+    .sports {
+      grid-area: 1 / 10 / 2 / 13;
+    }
+    .new-arrivals {
+      grid-area: 2 / 1 / 3 / 5;
+      padding: 6px;
+      .new-arrivals-size {
+        display: none;
+      }
+      .new-arrivals-description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        h2 {
+          @include fontRoboto(17px, 26px, 700);
+        }
+        .for {
+          .for-line {
+            width: 37px;
+            height: 1px;
+            border: 1px solid #000000;
+          }
+          p {
+            @include fontMerriweather(13px, 26px, 700);
+            padding-inline: 8px;
+          }
+        }
+        h1 {
+          @include fontMerriweather(28px, 26px, 800);
+        }
+      }
+    }
+    .designer-shoes {
+      grid-area: 2 / 5 / 3 / 9;
+      display: grid;
+      place-content: center;
+      h1 {
+        @include fontRoboto(29px, 26px, 700);
+        text-align: center;
+      }
+    }
+    .bags-under {
+      grid-area: 2 / 9 / 3 / 13;
+      display: flex;
+      .bags-under-description {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+          @include fontMerriweather(30px, 26px, 800);
+        }
+        h2 {
+          @include fontRoboto(23px, 26px, 700);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 764px) and (min-width: 600px) {
+  .header-top {
+    .header-top-left {
+      min-width: 53%;
+      .login {
+        span {
+          display: none;
+        }
+      }
+    }
+    .header-top-right {
+      width: 45%;
+    }
+  }
+
+  .header-buttom {
+    height: 132px;
+  }
+  .header-logo {
+    grid-area: 1 / 1 / 2 / 2;
+    padding-bottom: 0;
+  }
+  .header-menu {
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    .header-menu-list {
+      width: 100%;
+      display: flex;
+      height: 100%;
+      padding-top: 10px;
+      li {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .fashion-box {
+    height: 402px;
+    top: 132px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 81px;
+    column-gap: 25px;
+    row-gap: 39px;
+    li a span {
+      display: none;
+    }
+    .dresses {
+      display: none;
+    }
+    .new-arrivals {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    .shoes {
+      grid-area: 1 / 4 / 2 / 7;
+    }
+    .accessories {
+      grid-area: 1 / 7 / 2 / 10;
+    }
+    .sports {
+      grid-area: 1 / 10 / 2 / 13;
+    }
+    .new-arrivals {
+      grid-area: 2 / 1 / 3 / 5;
+      padding: 6px;
+      .new-arrivals-size {
+        display: none;
+      }
+      .new-arrivals-description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        h2 {
+          @include fontRoboto(12px, 19px, 700);
+        }
+        .for {
+          .for-line {
+            width: 29px;
+            height: 1px;
+            border: 1px solid #000000;
+          }
+          p {
+            @include fontMerriweather(10px, 19px, 700);
+            padding-inline: 3px;
+          }
+        }
+        h1 {
+          @include fontMerriweather(21px, 19px, 800);
+        }
+      }
+    }
+    .designer-shoes {
+      grid-area: 2 / 5 / 3 / 9;
+      display: grid;
+      place-content: center;
+      h1 {
+        @include fontRoboto(22px, 19px, 700);
+        text-align: center;
+      }
+    }
+    .bags-under {
+      grid-area: 2 / 9 / 3 / 13;
+      display: flex;
+      .bags-under-description {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+          @include fontMerriweather(22px, 19px, 800);
+        }
+        h2 {
+          @include fontRoboto(18px, 19px, 700);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .header-top {
+    .header-top-left {
+      width: 100%;
+      justify-content: space-between;
+      .login {
+        display: none;
+      }
+    }
+    .header-top-right {
+      display: none;
+    }
+  }
+  .header-buttom {
+    height: 253px;
+
+    .header-buttom-container {
+      padding-top: 20px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+      position: relative;
+      .select-buttom {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 40px;
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .header-logo {
+        align-items: center;
+        justify-content: center;
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      .register {
+        display: grid;
+        grid-area: 3 / 1 / 4 / 2;
+      }
+      .menu-search {
+        grid-area: 4 / 1 / 5 / 2;
+        justify-content: center;
+        align-items: center;
+        .search-header {
+          width: 280px;
+          height: 38px;
+          .search-button {
+            width: 38px;
+            height: 36px;
+          }
+        }
+      }
+      .header-menu {
+        display: none;
+      }
+      .header-buttom_my-bag {
+        display: flex;
+        grid-area: 5 / 1 / 6 / 2;
+
+        .header-buttom-basket:hover .my-bag-content {
+          top: 253px;
+          right: 20px;
+          display: flex;
+          z-index: 12;
+          &::before {
+            @include fontMerriweather(11px, 19px, 400);
+            content: ' $376';
+            top: -33px;
+            width: 132px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+.catalog-menu {
+  display: none;
+  top: 258px;
+  position: absolute;
+  width: calc(100% - 40px);
+  &__details {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #bbbbbb;
+    transition: 0.5s;
+    summary {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include fontCousine(14px, 19px, 700);
+      text-transform: uppercase;
+      background-color: $colorBackground-White;
+      color: #565656;
+      padding-inline: 21px;
+    }
+    .second-list {
+      background-color: #eeeeee;
+      border-bottom: 2px solid $colorBackground-White;
+      &__content {
+        background-color: #f5f5f5;
+        list-style: none;
+        a {
+          @include fontArial(14px, 32px, 400);
+          padding-left: 19px;
+          text-decoration: none;
+          color: #555555;
+          &:hover {
+            color: #cf4647;
+          }
+        }
+      }
+    }
+  }
+  details > summary::after {
+    content: '';
+    width: 9px;
+    height: 6px;
+  }
+  details[open] > summary::after {
+    content: '';
+    width: 12px;
+    height: 2px;
+    background: url('./images/forms/line.png');
+    background-size: cover;
   }
 }
