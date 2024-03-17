@@ -1,0 +1,510 @@
+.ad-blocks {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  .ad-blocks-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 370px);
+    grid-template-rows: 430px 250px 250px;
+    gap: 30px;
+    padding-block: 60px;
+  }
+}
+.exclusive-box {
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  text-align: center;
+  .exclusive-slider {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .circle-arrow {
+      width: 39px;
+      aspect-ratio: 1 / 1;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(12%)
+          saturate(3089%) hue-rotate(262deg) brightness(106%)
+          contrast(93%);
+      }
+      &:hover {
+        background-color: $colorBackground-White;
+        img {
+          filter: brightness(0) saturate(100%) invert(26%) sepia(0%)
+            saturate(13%) hue-rotate(147deg) brightness(92%)
+            contrast(88%);
+        }
+      }
+    }
+    .exclusive-slider-content {
+      border: 1px solid rgba(255, 255, 255, 0.29);
+      display: grid;
+      place-content: center;
+      padding: 72px 32px;
+      .exclusive-text-first {
+        @include fontCousine(40px, 40px, 700);
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      .exclusive-text-second {
+        @include fontRoboto(25px, 40px, 400);
+        text-transform: uppercase;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+  .exclusive-link {
+    text-align: center;
+    @include fontMerriweather(14px, 21px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+.style-box {
+  grid-area: 1 / 3 / 3 / 4;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 50px;
+  text-align: center;
+  .style-text-first {
+    @include fontCousine(18px, 40px, 700);
+    color: #2f2f2f;
+  }
+  .style-text-second {
+    @include fontMerriweather(25px, 40px, 800);
+    text-transform: uppercase;
+    color: #333333;
+  }
+  .style-text-third {
+    @include fontRoboto(20px, 40px, 700);
+    text-transform: uppercase;
+    color: #2f2f2f;
+  }
+  .style-box-link {
+    @include fontMerriweather(14px, 21px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+.jewelry-box {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #cccccc;
+  padding-block: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  .jewelry-text-first {
+    @include fontMerriweather(40px, 22px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .jewelry-text-second {
+    @include fontRoboto(23px, 22px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-block: 12px 45px;
+  }
+  .jewelry-box-link {
+    @include fontMerriweather(15px, 22px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+.accessories-box {
+  grid-area: 3 / 1 / 4 / 2;
+  background-color: #cccccc;
+  padding-block: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  .accessories-text-first {
+    @include fontMerriweather(30px, 22px, 800);
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .accessories-text-second {
+    @include fontRoboto(25px, 22px, 400);
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-block: 18px 65px;
+  }
+  .accessories-box-link {
+    @include fontMerriweather(15px, 22px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+.lookbook-box {
+  grid-area: 2 / 2 / 4 / 3;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  .lookbook-box-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    padding: 34px;
+    .lookbook-text-first {
+      @include fontRoboto(35px, 22px, 700);
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .lookbook-text-second {
+      @include fontCousine(18px, 40px, 700);
+      color: #ffffff;
+    }
+    .lookbook-text-third {
+      @include fontCousine(30px, 40px, 700);
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .lookbook-box-link {
+      @include fontMerriweather(15px, 22px, 700);
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+      padding-top: 151px;
+    }
+  }
+  .lookbook-box-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    .circle {
+      width: 13px;
+      aspect-ratio: 1 / 1;
+      border: 2px solid $colorFonts-White;
+      border-radius: 50%;
+      &:hover {
+        background-color: $colorBackground-White;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.what-box {
+  grid-area: 3 / 3 / 4 / 4;
+  background-color: #cccccc;
+  display: grid;
+  place-content: center;
+  .what-box-text {
+    @include fontRoboto(30px, 22px, 700);
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1040px) {
+  .ad-blocks {
+    .ad-blocks-container {
+      display: grid;
+      grid-template-columns: repeat(3, 300px);
+      grid-template-rows: 346px 203px 203px;
+      gap: 20px;
+      padding-block: 30px;
+    }
+  }
+  .exclusive-box {
+    padding: 20px;
+    .exclusive-slider {
+      .exclusive-slider-content {
+        border: 1px solid rgba(255, 255, 255, 0.29);
+        display: grid;
+        place-content: center;
+        padding: 60px 30px;
+        .exclusive-text-first {
+          @include fontCousine(34px, 33px, 700);
+        }
+        .exclusive-text-second {
+          @include fontRoboto(22px, 33px, 400);
+        }
+      }
+    }
+  }
+  .style-box {
+    padding-block: 13px;
+    .style-text-first {
+      @include fontCousine(15px, 31px, 700);
+    }
+    .style-text-second {
+      @include fontMerriweather(20px, 31px, 800);
+    }
+    .style-text-third {
+      @include fontRoboto(15px, 31px, 700);
+    }
+    .style-box-link {
+      @include fontMerriweather(14px, 21px, 700);
+    }
+  }
+  .jewelry-box {
+    justify-content: center;
+    .jewelry-text-first {
+      @include fontMerriweather(32px, 17px, 700);
+    }
+    .jewelry-text-second {
+      @include fontRoboto(19px, 17px, 700);
+      padding-block: 14px;
+    }
+    .jewelry-box-link {
+      @include fontMerriweather(15px, 22px, 700);
+    }
+  }
+  .accessories-box {
+    justify-content: center;
+    .accessories-text-first {
+      @include fontMerriweather(25px, 17px, 800);
+    }
+    .accessories-text-second {
+      @include fontRoboto(20px, 17px, 400);
+      padding-block: 17px;
+    }
+    .accessories-box-link {
+      @include fontMerriweather(15px, 22px, 700);
+    }
+  }
+  .lookbook-box {
+    .lookbook-box-content {
+      padding: 16px;
+      .lookbook-text-first {
+        @include fontRoboto(30px, 19px, 700);
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      .lookbook-text-second {
+        @include fontCousine(15px, 35px, 700);
+      }
+      .lookbook-text-third {
+        @include fontCousine(27px, 35px, 700);
+      }
+      .lookbook-box-link {
+        @include fontMerriweather(15px, 22px, 700);
+        padding-top: 120px;
+      }
+    }
+  }
+  .what-box {
+    .what-box-text {
+      @include fontRoboto(28px, 22px, 700);
+    }
+  }
+}
+@media screen and (max-width: 1039px) and (min-width: 784px) {
+  .ad-blocks {
+    .ad-blocks-container {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 228px);
+      grid-template-rows: 266px 154px 154px;
+      gap: 20px;
+      padding-block: 30px;
+    }
+  }
+  .exclusive-box {
+    padding: 15px 20px;
+    .exclusive-slider {
+      .exclusive-slider-content {
+        border: 1px solid rgba(255, 255, 255, 0.29);
+        display: grid;
+        place-content: center;
+        padding: 45px 15px;
+        .exclusive-text-first {
+          @include fontCousine(26px, 25px, 700);
+        }
+        .exclusive-text-second {
+          @include fontRoboto(17px, 25px, 400);
+        }
+      }
+    }
+  }
+  .style-box {
+    padding-block: 20px;
+    .style-text-first {
+      @include fontCousine(13px, 25px, 700);
+    }
+    .style-text-second {
+      @include fontMerriweather(17px, 25px, 800);
+    }
+    .style-text-third {
+      @include fontRoboto(13px, 25px, 700);
+    }
+    .style-box-link {
+      @include fontMerriweather(14px, 21px, 700);
+    }
+  }
+  .jewelry-box {
+    justify-content: center;
+    .jewelry-text-first {
+      @include fontMerriweather(25px, 14px, 700);
+    }
+    .jewelry-text-second {
+      @include fontRoboto(15px, 14px, 700);
+      padding-block: 14px;
+    }
+    .jewelry-box-link {
+      @include fontMerriweather(15px, 22px, 700);
+    }
+  }
+  .accessories-box {
+    justify-content: center;
+    .accessories-text-first {
+      @include fontMerriweather(20px, 15px, 800);
+    }
+    .accessories-text-second {
+      @include fontRoboto(16px, 15px, 400);
+      padding-block: 17px;
+    }
+    .accessories-box-link {
+      @include fontMerriweather(15px, 22px, 700);
+    }
+  }
+  .lookbook-box {
+    .lookbook-box-content {
+      padding: 16px;
+      .lookbook-text-first {
+        @include fontRoboto(30px, 19px, 700);
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      .lookbook-text-second {
+        @include fontCousine(15px, 35px, 700);
+      }
+      .lookbook-text-third {
+        @include fontCousine(27px, 35px, 700);
+      }
+      .lookbook-box-link {
+        @include fontMerriweather(15px, 22px, 700);
+        padding-top: 120px;
+      }
+    }
+  }
+  .what-box {
+    .what-box-text {
+      @include fontRoboto(28px, 22px, 700);
+    }
+  }
+}
+@media screen and (max-width: 783px) {
+  .ad-blocks {
+    width: auto;
+    .ad-blocks-container {
+      width: auto;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(6, auto);
+      gap: 10px;
+      padding: 20px;
+    }
+  }
+  .exclusive-box {
+    grid-area: 1 / 1 / 2 / 2;
+    aspect-ratio: 1.9 / 1;
+    padding: 15px 20px;
+    .exclusive-slider {
+      .circle-arrow {
+        display: none;
+      }
+      .exclusive-slider-content {
+        border: 1px solid rgba(255, 255, 255, 0.29);
+        display: grid;
+        place-content: center;
+        padding: 30px 15px;
+        .exclusive-text-first {
+          @include fontCousine(21px, 21px, 700);
+        }
+        .exclusive-text-second {
+          @include fontRoboto(15px, 20px, 400);
+        }
+      }
+    }
+  }
+  .style-box {
+    grid-area: 2 / 1 / 3 / 2;
+    aspect-ratio: 1 / 1.9;
+    padding-block: 20px;
+    .style-text-first {
+      @include fontCousine(14px, 31px, 700);
+    }
+    .style-text-second {
+      @include fontMerriweather(20px, 31px, 800);
+    }
+    .style-text-third {
+      @include fontRoboto(16px, 31px, 700);
+    }
+  }
+  .jewelry-box {
+    aspect-ratio: 1.5 / 1;
+    grid-area: 3 / 1 / 4 / 2;
+    justify-content: end;
+    .jewelry-text-first {
+      @include fontMerriweather(35px, 19px, 700);
+    }
+    .jewelry-text-second {
+      @include fontRoboto(20px, 19px, 700);
+      padding-block: 12px 38px;
+    }
+  }
+  .accessories-box {
+    aspect-ratio: 1.5 / 1;
+    grid-area: 4 / 1 / 5 / 2;
+    justify-content: center;
+    .accessories-text-first {
+      @include fontMerriweather(25px, 18px, 800);
+    }
+    .accessories-text-second {
+      @include fontRoboto(21px, 18px, 400);
+      padding-block: 12px 38px;
+    }
+  }
+  .lookbook-box {
+    aspect-ratio: 1 / 1.4;
+    grid-area: 5 / 1 / 6 / 2;
+    .lookbook-box-content {
+      padding: 16px;
+      .lookbook-text-first {
+        @include fontRoboto(35px, 22px, 700);
+      }
+      .lookbook-text-second {
+        @include fontCousine(18px, 40px, 700);
+      }
+      .lookbook-text-third {
+        @include fontCousine(30px, 40px, 700);
+      }
+      .lookbook-box-link {
+        @include fontMerriweather(15px, 22px, 700);
+        padding-top: 120px;
+      }
+    }
+  }
+  .what-box {
+    aspect-ratio: 1.5 / 1;
+    grid-area: 6 / 1 / 7 / 2;
+    .what-box-text {
+      @include fontRoboto(28px, 22px, 700);
+    }
+  }
+}
