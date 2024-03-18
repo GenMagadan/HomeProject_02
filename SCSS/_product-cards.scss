@@ -1,6 +1,6 @@
 .product-cards {
   height: 5090px;
-  background-color: #ffffff;
+  background-color: $colorBackground-White;
   height: auto;
   .product-cards-container {
     max-width: 1170px;
@@ -22,8 +22,8 @@
     color: #999999;
     text-decoration: none;
     &:hover {
-      color: #444444;
-      border-bottom: 2px solid #444444;
+      color: $colorFonts-Gray;
+      border-bottom: 2px solid $colorFonts-Gray;
       padding-bottom: 5px;
     }
   }
@@ -44,7 +44,7 @@
     position: relative;
     display: flex;
     height: 350px;
-    background-color: #cccccc;
+    background-color: $colorBackground-Gray;
     padding: 10px;
     justify-content: start;
     align-items: end;
@@ -78,10 +78,10 @@
       display: flex;
       justify-content: space-between;
       @include fontMerriweather(13px, 19px, 400);
-      color: #444444;
+      color: $colorFonts-Gray;
       span {
         @include fontCousine(15px, 17px, 700);
-        color: #222222;
+        color: $colorFonts-BlackTwo;
       }
       .crossed-out {
         @include fontCousine(15px, 17px, 700);
@@ -96,22 +96,22 @@
     height: 34px;
     justify-content: space-between;
     align-items: center;
-    border: 3px solid #444444;
+    border: 3px solid $colorFonts-Gray;
     a {
       width: 49%;
       text-align: center;
       @include fontMerriweather(14px, 17px, 700);
       text-transform: uppercase;
-      color: #444444;
+      color: $colorFonts-Gray;
       text-decoration: none;
       &:hover {
-        color: #cf4647;
+        color: $colorFonts-Red;
       }
     }
     .line {
       width: 3px;
       height: 16px;
-      background-color: #444444;
+      background-color: $colorFonts-Gray;
     }
   }
   &:hover {
@@ -140,13 +140,10 @@
 .card-two {
   grid-area: 1 / 2 / 2 / 3;
   .sale {
-    border: 4px solid #cf4647;
+    border: 4px solid $colorFonts-Red;
     p {
-      font-family: Arial;
-      font-size: 17px;
-      line-height: 17px;
-      font-weight: 900;
-      color: #cf4647;
+      @include fontArial(17px, 17px, 900);
+      color: $colorFonts-Red;
     }
   }
 }
@@ -158,10 +155,7 @@
   .sale {
     border: 4px solid #524656;
     p {
-      font-family: Arial;
-      font-size: 17px;
-      line-height: 17px;
-      font-weight: 700;
+      @include fontArial(17px, 17px, 700);
       text-transform: uppercase;
       color: #524656;
     }
@@ -178,10 +172,7 @@
   .sale {
     border: 4px solid #999999;
     p {
-      font-family: Arial;
-      font-size: 15px;
-      line-height: 12px;
-      font-weight: 700;
+      @include fontArial(15px, 12px, 700);
       text-transform: uppercase;
       color: #999999;
     }
@@ -204,7 +195,7 @@
     padding: 10px 20px;
     &:hover {
       border: 1px solid #dddddd;
-      color: #444444;
+      color: $colorFonts-Gray;
     }
   }
   .show-link-line {
